@@ -10,6 +10,7 @@ import {
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/providers/theme-provider";
+import ModalProvider from "./providers/modal-provider";
 
 const font = DM_Sans({ subsets: ["latin"] });
 
@@ -27,15 +28,21 @@ export default function RootLayout({
     <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
     <html lang="en">
       <body className={font.className}>
-      <ThemeProvider
+      
+        
+        <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
+          <ModalProvider>
         {children}
         
-        </ThemeProvider>
+        </ModalProvider>
+        
+        
+        </ ThemeProvider>
         </body>
     </html>
     </ClerkProvider>

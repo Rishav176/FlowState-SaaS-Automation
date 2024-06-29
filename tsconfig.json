@@ -22,6 +22,6 @@
     },
     "types": ["@uploadcare/blocks/types/jsx"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/(main)/(pages)/settings/_components/upload-care-button.jsx", "src/app/(main)/(pages)/settings/_components/upload-care-button.jsx", "src/app/(main)/(pages)/settings/_components/upload-care-button.jsx"],
   "exclude": ["node_modules"]
 }
