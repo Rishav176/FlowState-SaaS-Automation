@@ -11,7 +11,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/providers/theme-provider";
 import ModalProvider from "./providers/modal-provider";
-
+import { Toaster } from "@/components/ui/sonner"
 const font = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -37,8 +37,9 @@ export default function RootLayout({
             disableTransitionOnChange
           >
           <ModalProvider>
+            
         {children}
-        
+        <Toaster />
         </ModalProvider>
         
         

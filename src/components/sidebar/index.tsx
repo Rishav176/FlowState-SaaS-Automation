@@ -21,7 +21,7 @@ const MenuOptions = (props: Props) => {
     
     <nav className='dark:bg-black h-screen overflow-scroll justify between flex items-center flex-col gap-10 py-6 px-2'>
         <div className='flex items-center justify-center flex-col gap-8'>
-            <Link className="flex font-bold flex-row"
+            <Link className="flex font-bold flex-row pl-2"
             href="/">
                 FlowState
             </Link>
