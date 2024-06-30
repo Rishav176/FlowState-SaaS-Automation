@@ -111,3 +111,8 @@ export type ConnectionProviderProps = {
     }
     return <Provider value={values}>{children}</Provider>
   }
+
+  export const useNodeConnections = () => {
+    const nodeConnection = useContext(ConnectionsContext)
+    return { nodeConnection }
+  }
