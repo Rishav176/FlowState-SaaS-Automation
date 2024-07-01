@@ -1,8 +1,8 @@
 "use client"
 import { useEditor } from '@/app/providers/editor-provider';
 import {  EditorCanvasCardType, EditorNodeType } from '@/lib/types';
-import React, { useCallback, useMemo, useState } from 'react'
-import ReactFlow, { Background, Connection, Controls, Edge, EdgeChange, MiniMap, NodeChange, ReactFlowInstance, addEdge } from 'reactflow';
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import ReactFlow, { Background, Connection, Controls, Edge, EdgeChange, MiniMap, NodeChange, ReactFlowInstance, addEdge,applyNodeChanges,applyEdgeChanges } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { Toaster } from "@/components/ui/sonner"
 import EditorCanvasCardSingle from './editor-canvas-card-single';
@@ -30,7 +30,7 @@ const EditorCanvas = (props: Props) => {
         event.dataTransfer.dropEffect = "move"
     },[])
     const onNodesChange = useCallback(
-        (charges: NodeChange[]) => {
+        (changes: NodeChange[]) => {
             //@ts-ignore
             setNodes((nds)=> applyNodeChanges(changes, nds))
         },
@@ -40,7 +40,7 @@ const EditorCanvas = (props: Props) => {
     const onEdgesChange = useCallback(
         (changes: EdgeChange[]) => 
             //@ts-ignore
-            setEdges((eds)=> applyEdgesChanges(changes,eds)),
+            setEdges((eds)=> applyEdgeChanges(changes,eds)),
             [setEdges]
         
     )
@@ -110,7 +110,9 @@ const EditorCanvas = (props: Props) => {
         });
     };
 
-
+    useEffect(()=>{
+        dispatch({ type: 'LOAD_DATA',payload: {edges,elements: nodes}})
+    }, [nodes,edges])
 
     const nodeTypes =useMemo(
         ()=>({
