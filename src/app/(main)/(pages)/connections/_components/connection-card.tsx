@@ -26,11 +26,11 @@ const ConnectionCard = ({description, type, icon, title, connected}: Props) => {
             </div>
         </CardHeader>
         <div className="flex flex-col items-center gap-2 p-4">
-            {/* {connected[type]?(
+            {connected[type]?(
                 <div  className="border-bg-primary rounded-lg border-2 px-3 py-2 font-bold text-white">
                     Connected
                 </div>
-            ): ( */}
+            ): (
                 <Link href={
                     title=='Discord' ? process.env.NEXT_PUBLIC_DISCORD_REDIRECT!
                     : title=='Notion'? process.env.NEXT_PUBLIC_NOTION_AUTH_URL!
@@ -38,8 +38,7 @@ const ConnectionCard = ({description, type, icon, title, connected}: Props) => {
                     : '#'
                 }
                 className=" rounded-lg bg-primary p-2 font-bold text-primary-foreground">Connect</Link>
-            {/* )
-        } */}
+            )}
         </div>
     </Card>
   )

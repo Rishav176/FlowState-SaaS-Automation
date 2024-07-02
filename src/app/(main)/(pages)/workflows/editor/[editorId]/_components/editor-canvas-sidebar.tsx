@@ -6,11 +6,13 @@ import { Separator } from '@/components/ui/separator'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CONNECTIONS, EditorCanvasDefaultCardTypes } from '@/lib/constant'
 import { EditorCanvasTypes, EditorNodeType } from '@/lib/types'
-import React from 'react'
+import React, { useEffect } from 'react'
 import EditorCanvasIconHelper from './editor-canvas-card-icon-helper'
-import { onDragStart } from '@/lib/editor-utils'
+import { onConnections, onDragStart } from '@/lib/editor-utils'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import RenderConnectionAccordion from './render-connections-accordion'
+import RenderOutputAccordion from './render-output-accordion'
+import { useFuzzieStore } from '@/store'
 
 type Props = {
     nodes: EditorNodeType[]
@@ -19,6 +21,12 @@ type Props = {
 const EditorCanvasSidebar = ({nodes}: Props) => {
     const {state} = useEditor()
     const {nodeConnection} = useNodeConnections()
+    const {googleFile, setSlackChannels} = useFuzzieStore()
+    useEffect(()=>{
+        if (state) {
+            onConnections(nodeConnection,state,googleFile)
+        }
+    },[state])
   return (
     <aside>
         <Tabs defaultValue ="actions" className="h-screen overflow-scroll pb-24">
@@ -65,6 +73,12 @@ const EditorCanvasSidebar = ({nodes}: Props) => {
                             <RenderConnectionAccordion key={connection.title} state={state} connection={connection}/>
                         ))}{' '}
                     </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="Expected Output" className="px-2">
+                    <AccordionTrigger className="!no-underline">
+                        Action
+                    </AccordionTrigger>
+                    <RenderOutputAccordion state={state} nodeConnection={nodeConnection}/>
                 </AccordionItem>
             </Accordion>
         </TabsContent>
