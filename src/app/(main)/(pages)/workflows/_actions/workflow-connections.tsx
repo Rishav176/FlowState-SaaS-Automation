@@ -159,3 +159,16 @@ export const onCreateNodeTemplate = async (
       return {message: 'Sorry! Workflow not created, try again later.'}
     }
   }
+
+  export const onGetNodesEdges = async (flowId: string) => {
+    const nodesEdges = await db.workflows.findUnique({
+      where:{
+        id: flowId,
+      },
+      select: {
+        nodes: true,
+        edges: true,
+      },
+    })
+    if (nodesEdges?.nodes && nodesEdges?.edges) return nodesEdges
+  }

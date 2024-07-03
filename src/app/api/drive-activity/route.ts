@@ -36,7 +36,7 @@ export async function GET() {
         requestBody: {
             id: channelId,
             type: 'web_hook',
-            address: 'https://773e-106-222-217-197.ngrok-free.app/api/drive-activity/notification',
+            address: `${process.env.NGROK_URI}/api/drive-activity/notification`,
             kind: 'api#channel',
         }
     }) 

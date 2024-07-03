@@ -13,6 +13,7 @@ import {v4} from 'uuid'
 import { EditorCanvasDefaultCardTypes } from '@/lib/constant';
 import FlowInstance from './flow-instance';
 import EditorCanvasSidebar from './editor-canvas-sidebar';
+import { onGetNodesEdges } from '../../../_actions/workflow-connections';
 type Props = {}
 const initialNodes: EditorNodeType[]= []
 const initialEdges :{id : string; source: string; target: string}[]=[]
@@ -130,6 +131,23 @@ const EditorCanvas = (props: Props) => {
             Wait: EditorCanvasCardSingle
         }),[]
     )
+
+    useEffect(()=>{
+        onGetWorkflow()
+    },[])
+
+    const onGetWorkflow = async () => {
+        setIsWorkFlowLoading(true);
+        const response = await onGetNodesEdges(pathname.split('/').pop()!);
+        if (response) {
+            setEdges(JSON.parse(response.edges!));
+            setNodes(JSON.parse(response.nodes!));
+            setIsWorkFlowLoading(false);
+        }
+        setIsWorkFlowLoading(false);
+    
+    };
+
 
   return (
     <ResizablePanelGroup direction="horizontal" className="">
