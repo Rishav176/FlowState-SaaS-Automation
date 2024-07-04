@@ -3,7 +3,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@radix
 import { Book, Headphones, Search } from 'lucide-react'
 import { Input } from "@/components/ui/input"
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { UserButton } from '@clerk/nextjs'
 import { useBilling } from '@/app/providers/billing-provider'
 import { onPaymentDetails } from '@/app/(main)/(pages)/billing/_actions/payment-connections'
@@ -21,12 +21,29 @@ const InfoBar = (props: Props) => {
         }
     }
 
+    useEffect(()=>{
+        onGetPayment()
+    },[])
+
   return (
     <div className='flex flex-row justify-end gap-6 items-center px-4 py-4 w-full dark:bg-black'>
-        <span className='flex items-center bg-muted px-4 rounded-full'>
-            <Search />
-            <Input placeholder="Quick Search" className='border-none bg-transparent'/>
-        </span>
+         <span className="flex items-center gap-2 font-bold">
+        <p className="text-sm font-light text-gray-300">Credits</p>
+        {tier == 'Unlimited' ? (
+          <span>Unlimited</span>
+        ) : (
+          <span>
+            {credits}/{tier == 'Free' ? '10' : tier == 'Pro' && '100'}
+          </span>
+        )}
+      </span>
+      <span className="flex items-center rounded-full bg-muted px-4">
+        <Search />
+        <Input
+          placeholder="Quick Search"
+          className="border-none bg-transparent"
+        />
+      </span>
         <TooltipProvider>
             <Tooltip delayDuration={0}>
                 <TooltipTrigger>

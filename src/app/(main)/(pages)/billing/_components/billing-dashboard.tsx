@@ -9,42 +9,41 @@ import CreditTracker from './credits-tracker'
 type Props = {}
 
 const BillingDashboard = (props: Props) => {
-    const {credits, tier} = useBilling()
-    const [stripeProducts, setStripeProducts] = useState<any>([])
-    const [loading, setLoading] = useState<boolean>(false)
+  const { credits, tier } = useBilling()
+  const [stripeProducts, setStripeProducts] = useState<any>([])
+  const [loading, setLoading] = useState<boolean>(false)
 
-    const onStripeProducts = async () => {
-        setLoading(true)
-        const {data} = await axios.get('/api/payment')
-        if (data) {
-            setStripeProducts(data)
-            setLoading(false)
-        }
+  const onStripeProducts = async () => {
+    setLoading(true)
+    const { data } = await axios.get('/api/payment')
+    if (data) {
+      setStripeProducts(data)
+      setLoading(false)
     }
+  }
 
-    useEffect(()=>{
-        onStripeProducts()
-    
-    },[])
+  useEffect(() => {
+    onStripeProducts()
+  }, [])
 
-    const onPayment = async (id: string) => {
-        const {data} = await axios.post(
-            '/api/payment',
-            {
-                priceId:id,
-            },
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-               
-                },
-            }
-        )
-    }
+  const onPayment = async (id: string) => {
+    const { data } = await axios.post(
+      '/api/payment',
+      {
+        priceId: id,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    )
+    window.location.assign(data)
+  }
 
   return (
     <>
-    {/* {loading ? (
+      {/* {loading ? (
         <div className="absolute flex h-full w-full items-center justify-center">
           <svg
             aria-hidden="true"
@@ -64,21 +63,21 @@ const BillingDashboard = (props: Props) => {
           </svg>
         </div>
       ) : ( */}
-      <>
-      <div className="flex gap-5 p-6">
-        <SubscriptionCard
-          onPayment={onPayment}
-          tier={tier}
-          products={stripeProducts}
-        />
-      </div>
-      <CreditTracker
-        tier={tier}
-        credits={parseInt(credits)}
-      />
+        <>
+          <div className="flex gap-5 p-6">
+            <SubscriptionCard
+              onPayment={onPayment}
+              tier={tier}
+              products={stripeProducts}
+            />
+          </div>
+          <CreditTracker
+            tier={tier}
+            credits={parseInt(credits)}
+          />
+        </>
+      {/* )} */}
     </>
-  {/* )} */}
-</>
   )
 }
 

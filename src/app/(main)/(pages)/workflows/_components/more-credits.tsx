@@ -1,3 +1,4 @@
+'use client'
 import { useBilling } from '@/app/providers/billing-provider'
 import { Card, CardContent, CardDescription } from '@/components/ui/card'
 import React from 'react'
