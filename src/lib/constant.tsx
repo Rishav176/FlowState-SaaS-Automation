@@ -8,47 +8,57 @@ import Workflows from "@/components/icons/workflows"
 import { Connection } from "./types"
 
 
-export const clients = [...new Array(10)].map((client, index) => ({
-  href: `/${index + 1}.png`,
-}))
+export const clients =  [
+  "Effortlessly Connected",
+  "Seamlessly Integrated",
+  "Productivity Boosting",
+  "Streamlined Collaboration",
+  "Smart Automation",
+  "Task Mastery",
+  "Efficient Workflow",
+  "Unified Workspace",
+  "Instant Organization",
+  "Ultimate Efficiency",
+  "Simplified Management",
+  "Dynamic Integration"]
 
 export const products = [
   {
-    title: 'Moonbeam',
-    link: 'https://gomoonbeam.com',
-    thumbnail: '/p1.png',
+    title: 'Discord',
+    link: 'https://discord.com/',
+    thumbnail: '/DPara.png',
   },
   {
-    title: 'Cursor',
-    link: 'https://cursor.so',
-    thumbnail: '/p2.png',
+    title: 'Connections',
+    link: '/connections',
+    thumbnail: '/FCPara.png',
   },
   {
-    title: 'Rogue',
-    link: 'https://userogue.com',
-    thumbnail: '/p3.png',
-  },
-
-  {
-    title: 'Editorially',
-    link: 'https://editorially.org',
-    thumbnail: '/p4.png',
-  },
-  {
-    title: 'Editrix AI',
-    link: 'https://editrix.ai',
-    thumbnail: '/p5.png',
-  },
-  {
-    title: 'Pixel Perfect',
-    link: 'https://app.pixelperfect.quest',
-    thumbnail: '/p6.png',
+    title: 'Notion',
+    link: 'https://www.notion.so',
+    thumbnail: '/NPara.png',
   },
 
   {
-    title: 'Algochurn',
-    link: 'https://algochurn.com',
-    thumbnail: '/p1.png',
+    title: 'Editor Canvas',
+    link: '/workflows/editor',
+    thumbnail: '/temp-banner.png',
+  },
+  {
+    title: 'Slack',
+    link: 'https://app.slack.com',
+    thumbnail: '/SPara.png',
+  },
+  {
+    title: 'Workflows',
+    link: '/workflow',
+    thumbnail: '/FWPara.png',
+  },
+
+  {
+    title: 'Billing',
+    link: '/billing',
+    thumbnail: '/FBPara.png',
   },
   {
     title: 'Aceternity UI',
@@ -56,40 +66,41 @@ export const products = [
     thumbnail: '/p2.png',
   },
   {
-    title: 'Tailwind Master Kit',
-    link: 'https://tailwindmasterkit.com',
-    thumbnail: '/p3.png',
+    title: 'Discord',
+    link: 'https://discord.com/',
+    thumbnail: '/DPara.png',
   },
   {
-    title: 'SmartBridge',
-    link: 'https://smartbridgetech.com',
-    thumbnail: '/p4.png',
+    title: 'Connections',
+    link: '/connections',
+    thumbnail: '/FCPara.png',
   },
   {
-    title: 'Renderwork Studio',
-    link: 'https://renderwork.studio',
-    thumbnail: '/p5.png',
+    title: 'Notion',
+    link: 'https://www.notion.so',
+    thumbnail: '/NPara.png',
   },
 
   {
-    title: 'Creme Digital',
-    link: 'https://cremedigital.com',
-    thumbnail: '/p6.png',
+    title: 'Editor Canvas',
+    link: '/workflows/editor',
+    thumbnail: '/temp-banner.png',
   },
   {
-    title: 'Golden Bells Academy',
-    link: 'https://goldenbellsacademy.com',
-    thumbnail: '/p1.png',
+    title: 'Slack',
+    link: 'https://app.slack.com',
+    thumbnail: '/SPara.png',
   },
   {
-    title: 'Invoker Labs',
-    link: 'https://invoker.lol',
-    thumbnail: '/p2.png',
+    title: 'Workflows',
+    link: '/workflow',
+    thumbnail: '/FWPara.png',
   },
+
   {
-    title: 'E Free Invoice',
-    link: 'https://efreeinvoice.com',
-    thumbnail: '/p3.png',
+    title: 'Billing',
+    link: '/billing',
+    thumbnail: '/FBPara.png',
   },
 ]
 

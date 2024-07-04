@@ -11,9 +11,7 @@ export const InfiniteMovingCards = ({
   pauseOnHover = true,
   className,
 }: {
-  items: {
-    href: string
-  }[]
+  items:string[]
   direction?: 'left' | 'right'
   speed?: 'fast' | 'normal' | 'slow'
   pauseOnHover?: boolean
@@ -87,14 +85,7 @@ export const InfiniteMovingCards = ({
         )}
       >
         {items.map((item, idx) => (
-          <Image
-            width={170}
-            height={1}
-            src={item.href}
-            alt={item.href}
-            className=" relative rounded-2xl  object-contain opacity-50"
-            key={item.href}
-          />
+         <p>{item}</p>
         ))}
       </ul>
     </div>

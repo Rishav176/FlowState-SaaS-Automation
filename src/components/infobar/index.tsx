@@ -37,14 +37,14 @@ const InfoBar = (props: Props) => {
           </span>
         )}
       </span>
-      <span className="flex items-center rounded-full bg-muted px-4">
+      {/* <span className="flex items-center rounded-full bg-muted px-4">
         <Search />
         <Input
           placeholder="Quick Search"
           className="border-none bg-transparent"
         />
-      </span>
-        <TooltipProvider>
+      </span> */}
+        {/* <TooltipProvider>
             <Tooltip delayDuration={0}>
                 <TooltipTrigger>
                     <Headphones/>
@@ -63,7 +63,7 @@ const InfoBar = (props: Props) => {
                     <p>Guide</p>
                 </TooltipContent>
             </Tooltip>
-        </TooltipProvider>
+        </TooltipProvider> */}
         <UserButton />
         
     </div>
