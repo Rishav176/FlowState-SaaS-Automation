@@ -46,11 +46,8 @@ const ActionButton = ({
   if (response) {
     nodeConnection.setNotionNode((prev: any) => ({
       ...prev,
-      content: {
-        name: '',
-        kind: '',
-        type: '',
-      },
+      content: '',
+       
     }))
   }
  },[nodeConnection.notionNode])

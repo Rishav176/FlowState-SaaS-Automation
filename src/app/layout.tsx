@@ -12,6 +12,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/app/providers/theme-provider";
 import ModalProvider from "./providers/modal-provider";
 import { Toaster } from "@/components/ui/sonner"
+import { BillingProvider } from "./providers/billing-provider";
 const font = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -36,11 +37,14 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <BillingProvider>
           <ModalProvider>
+          
             
         {children}
         <Toaster />
         </ModalProvider>
+        </BillingProvider>
         
         
         </ ThemeProvider>
