@@ -27,13 +27,14 @@ export default function Home() {
                   </span>
                 </Button>
                 <h1 className="text-5xl md:text-8xl  bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold">
-                  Automate Your Work With Fuzzie
+                  Automate Your Work With FlowState
                 </h1>
               </div>
             }
           />
         </div>
       </section>
+
       <InfiniteMovingCards
       className="md:mt-[18rem] mt-[-100px]"
       items={clients}
@@ -51,7 +52,7 @@ export default function Home() {
             dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md: !w-[350px] h-auto rounded-xl p-6 border">
               <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
             Hobby
-            <h2 className="text-6xl">$0</h2>
+            <h2 className="text-6xl">Free</h2>
             </CardItem>
             <CardItem translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
               Get a glimpse of what our software is capable of. Just a heads up {"you'll"} never leave us after this!
@@ -86,7 +87,7 @@ export default function Home() {
             dark:bg-black dark:border-[#c0c0c0] border-black/[0.1] w-full md: !w-[350px] h-auto rounded-xl p-6 border">
               <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
             Pro
-            <h2 className="text-6xl">$29</h2>
+            <h2 className="text-6xl">$4.99</h2>
             </CardItem>
             <CardItem translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
               Get a glimpse of what our software is capable of. Just a heads up {"you'll"} never leave us after this!
@@ -121,7 +122,7 @@ export default function Home() {
             dark:bg-black dark:border-[#d4af37] border-black/[0.1] w-full md: !w-[350px] h-auto rounded-xl p-6 border">
               <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
             Unlimited
-            <h2 className="text-6xl">$99</h2>
+            <h2 className="text-6xl">$9.99</h2>
             </CardItem>
             <CardItem translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
               Get a glimpse of what our software is capable of. Just a heads up {"you'll"} never leave us after this!
