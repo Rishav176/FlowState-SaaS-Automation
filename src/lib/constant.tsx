@@ -115,16 +115,8 @@ export const menuOptions = [
 ]
 
 export const EditorCanvasDefaultCardTypes = {
-  Email: { description: 'Send and email to a user', type: 'Action' },
-  Condition: {
-    description: 'Boolean operator that creates different conditions lanes.',
-    type: 'Action',
-  },
-  AI: {
-    description:
-      'Use the power of AI to summarize, respond, create and much more.',
-    type: 'Action',
-  },
+  
+  
   Slack: { description: 'Send a notification to slack', type: 'Action' },
   'Google Drive': {
     description:
@@ -141,22 +133,13 @@ export const EditorCanvasDefaultCardTypes = {
     description: 'Post messages to your discord server',
     type: 'Action',
   },
-  'Google Calendar': {
-    description: 'Create a calendar invite.',
-    type: 'Action',
-  },
+  
   Trigger: {
     description: 'An event that starts the workflow.',
     type: 'Trigger',
   },
-  Action: {
-    description: 'An event that happens after the workflow begins',
-    type: 'Action',
-  },
-  Wait: {
-    description: 'Delay the next action step by using the wait timer.',
-    type: 'Action',
-  },
+  
+  
 }
 
 export const CONNECTIONS: Connection[] = [
