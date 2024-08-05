@@ -51,8 +51,7 @@ const EditorCanvasSidebar = ({nodes}: Props) => {
             {Object.entries(EditorCanvasDefaultCardTypes).filter(
                 ([_, cardType])=> 
                     (!nodes.length && cardType.type === 'Trigger') ||
-                    (!nodes.length && cardType.type ==='Action')||
-                    (!nodes.length && cardType.type ==='Condition')
+                    (nodes.length && cardType.type ==='Action')
             )
             .map(([cardKey, cardValue])=> (
                 <Card key={cardKey} draggable className='w-full cursur-grab border-black bg-neutral-100
