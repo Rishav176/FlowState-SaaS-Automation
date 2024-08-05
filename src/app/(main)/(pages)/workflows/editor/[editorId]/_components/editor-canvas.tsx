@@ -117,18 +117,15 @@ const EditorCanvas = (props: Props) => {
 
     const nodeTypes =useMemo(
         ()=>({
-            Action: EditorCanvasCardSingle,
+          
             Trigger : EditorCanvasCardSingle,
-            Email: EditorCanvasCardSingle,
-            Condition: EditorCanvasCardSingle,
-            AI: EditorCanvasCardSingle,
+            
+            
             Slack: EditorCanvasCardSingle,
             'Google Drive': EditorCanvasCardSingle,
             Notion: EditorCanvasCardSingle,
             Discord: EditorCanvasCardSingle,
-            'Custom Webhook': EditorCanvasCardSingle,
-            'Google Calendar': EditorCanvasCardSingle,
-            Wait: EditorCanvasCardSingle
+            
         }),[]
     )
 
