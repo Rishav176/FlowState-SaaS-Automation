@@ -25,7 +25,7 @@ const CustomHandle = (props: Props) => {
             (edge) => edge.target === e.target
         ).length
         if (targetFromHandleInState ===1) return false
-        if (sourceNode?.type === 'Condition') return true
+        
         if (sourcesFromHandleInState <1) return true
         return false
     }}
