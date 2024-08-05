@@ -138,7 +138,10 @@ export const EditorCanvasDefaultCardTypes = {
     description: 'An event that starts the workflow.',
     type: 'Trigger',
   },
-  
+  Action: {
+    description: 'An event that happens after the workflow begins',
+    type: 'Action',
+  },
   
 }
 
