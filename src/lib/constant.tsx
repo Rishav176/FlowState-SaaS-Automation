@@ -116,7 +116,7 @@ export const menuOptions = [
 
 export const EditorCanvasDefaultCardTypes = {
   
-  
+ 
   Slack: { description: 'Send a notification to slack', type: 'Action' },
   'Google Drive': {
     description:

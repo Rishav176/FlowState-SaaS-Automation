@@ -21,6 +21,14 @@ type Props = { type: EditorCanvasTypes }
 const EditorCanvasIconHelper = ({ type }: Props) => {
   switch (type) {
     
+    case 'Condition':
+      return (
+        <GitBranch
+          className="flex-shrink-0"
+          size={30}
+        />
+      )
+    
     case 'Slack':
       return (
         <Slack
@@ -42,6 +50,7 @@ const EditorCanvasIconHelper = ({ type }: Props) => {
           size={30}
         />
       )
+    
     
     case 'Trigger':
       return (

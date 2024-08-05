@@ -24,13 +24,16 @@ export type Connection ={
 }
 export type EditorCanvasTypes=
 
+| 'Condition'
+
 | 'Slack'
 | 'Google Drive'
 |'Notion'
 
+
 | 'Trigger'
 | 'Action'
-
+;
 
 export type EditorCanvasCardType = {
     title: string;
