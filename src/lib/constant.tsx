@@ -116,7 +116,11 @@ export const menuOptions = [
 
 export const EditorCanvasDefaultCardTypes = {
   
- 
+  Condition: {
+    description: 'Boolean operator that creates different conditions lanes.',
+    type: 'Action',
+  },
+  
   Slack: { description: 'Send a notification to slack', type: 'Action' },
   'Google Drive': {
     description:
@@ -133,7 +137,7 @@ export const EditorCanvasDefaultCardTypes = {
     description: 'Post messages to your discord server',
     type: 'Action',
   },
-  
+ 
   Trigger: {
     description: 'An event that starts the workflow.',
     type: 'Trigger',
